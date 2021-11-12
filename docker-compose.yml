@@ -1,0 +1,11 @@
+version: '2'
+services:    
+  riddler:
+    privileged: true
+    build: ./riddler
+    labels:
+      io.balena.features.balena-socket: 1
+      io.balena.features.sysfs: 1
+      io.balena.features.supervisor-api: 1
+    ports:
+      - "5000:5000"

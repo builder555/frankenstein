@@ -1,0 +1,12 @@
+FROM balenalib/%%BALENA_MACHINE_NAME%%-alpine
+
+ENV UDEV=on
+
+RUN apk add udevil ntfs-3g exfat
+RUN apk add --no-cache docker
+RUN apk add python3 py3-pip
+RUN pip install fastapi uvicorn
+
+COPY ./app /app
+
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "5000"]
