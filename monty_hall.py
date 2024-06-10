@@ -28,5 +28,5 @@ def monty_hall_guessing(total = 10000) -> int:
 
 if __name__ == "__main__":
     total = 200000
-    print(f'regular guessing: {round(regular_guessing(total) / total * 1000)/10}%')
-    print(f'switching door: {round(monty_hall_guessing(total) / total * 1000)/10}%')
+    print(f'regular guessing: {round(regular_guessing(total) / total * 100,1)}%')
+    print(f'switching door: {round(monty_hall_guessing(total) / total * 100,1)}%')
